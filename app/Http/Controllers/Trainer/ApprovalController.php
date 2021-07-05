@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ApprovalController extends Controller
 {
     public function approval(){
+        dd("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         // List all
         // Select * from applications where status == 'PENDING'
         // Select * from cadets JOIN ON applications where status == 'PENDING'
