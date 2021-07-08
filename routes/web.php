@@ -27,7 +27,8 @@ Route::resource('/trainers', App\Http\Controllers\Trainer\TrainerController::cla
 Route::resource('/cadets', App\Http\Controllers\Trainer\CadetController::class);
 Route::resource('/trainings', App\Http\Controllers\Trainer\TrainingController::class);
 Route::resource('/equipments', App\Http\Controllers\Trainer\EquipmentController::class);
-Route::get('/equipments-approval', [\App\Http\Controllers\Trainer\ApprovalController::class, 'approval'])->name('equipments-approval');
+Route::get('/equipments-pending', [\App\Http\Controllers\Trainer\ApprovalController::class, 'getAllPending'])->name('equipments-pending');
+Route::get('/equipments-approve/{id}', [\App\Http\Controllers\Trainer\ApprovalController::class, 'approve'])->name('equipments-approve');
 Route::get('/equipments-return', [\App\Http\Controllers\Trainer\ReturnController::class, 'return'])->name('equipments-return');
 Route::get('/profile-trainer', [\App\Http\Controllers\Trainer\ProfileController::class, 'profile'])->name('profile-trainer.profile');
 Route::put('/profile-trainer/update/{id}', [\App\Http\Controllers\Trainer\ProfileController::class, 'update'])->name('profile-trainer.update');

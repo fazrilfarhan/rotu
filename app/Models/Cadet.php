@@ -33,6 +33,20 @@ class Cadet extends Model
         return $this->belongsToMany(Equipment::class, 'applications')->withPivot('status')->withTimestamps();
     }
 
+    public function pending()
+    {
+        return $this->belongsToMany(Equipment::class, 'applications')->withTimestamps()
+            ->withPivot('status')
+            ->wherePivot('status', 'PENDING');
+    }
+
+    public function approved()
+    {
+        return $this->belongsToMany(Equipment::class, 'applications')->withTimestamps()
+            ->withPivot('status')
+            ->wherePivot('status', 'APPROVED');
+    }
+
     public function user()
     {
         return $this->morphOne(User::class, 'userable');
