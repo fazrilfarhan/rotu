@@ -404,7 +404,7 @@
                                     </ul>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="/equipments-return">
+                                            <a href="/equipments-returning">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext"
                                                     data-i18n="nav.basic-components.alert">Equipment Return</span>

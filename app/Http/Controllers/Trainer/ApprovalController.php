@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Trainer;
 
 use App\Models\Cadet;
-use App\Http\Controllers\Controller;
 use App\Models\Equipment;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 
