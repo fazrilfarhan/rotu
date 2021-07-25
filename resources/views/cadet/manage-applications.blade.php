@@ -17,6 +17,7 @@
                     <tr>
                         <th style="width: 60%">Equipments</th>
                         <th>Status Application</th>
+                        <th>Action</th>    
                     </tr>
                 </thead>
                 <tbody>
@@ -25,8 +26,13 @@
                         <td>
                             {{$item->pivot->status}}
                         </td>
+                        <th>
+                            <a href=""><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Print</button></a>
+                        </th> 
                     </tr>
+
                 </tbody>
+
             </table>
         </div>
     </div>

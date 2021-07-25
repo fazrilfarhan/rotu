@@ -5,7 +5,6 @@
 @section('content')
 
 
-
 <div class="card">
     <div class="card-header">
         <h4><strong>View Trainings</strong></h4>
@@ -39,4 +38,9 @@
         </div>
     </div>
 </div>
+
+<div class="form-group">
+    <button class="btn btn-primary btn-block">Print</button>
+</div>
+
 @endsection
