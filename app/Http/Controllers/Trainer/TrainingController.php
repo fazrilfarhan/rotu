@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Builder\TraitUse;
+use Carbon\Carbon;
+use PDF;
 
 class TrainingController extends Controller
 {
@@ -22,7 +24,11 @@ class TrainingController extends Controller
     public function index()
     {
         $trainings = Training::all();
-
+        foreach ($trainings as $training) {
+            $in = new Carbon($training->startDate);
+            $out = new Carbon($training->endDate);
+            $training->totalDays = $out->diffInDays($in);
+        }
         return view('trainer.manage-trainings', compact('trainings'));
     }
 
@@ -73,8 +79,12 @@ class TrainingController extends Controller
     {
         $training = Training::find($id);
         $cadets = $training->cadets;
-
-        return view('trainer.view-trainings', compact('cadets'));
+        foreach ($cadets as $cadet) {
+            $in = new Carbon($cadet->pivot->dateIn);
+            $out = new Carbon($cadet->pivot->dateOut);
+            $cadet->registeredDays = $out->diffInDays($in);
+        }
+        return view('trainer.view-trainings', compact('cadets', 'id'));
     }
 
     /**
@@ -131,5 +141,18 @@ class TrainingController extends Controller
 
         return redirect()->back();
         
+    }
+
+    public function print($id)
+    {
+        $training = Training::find($id);
+        $cadets = $training->cadets;
+        foreach ($cadets as $cadet) {
+            $in = new Carbon($cadet->pivot->dateIn);
+            $out = new Carbon($cadet->pivot->dateOut);
+            $cadet->registeredDays = $out->diffInDays($in);
+        }
+        $pdf =  PDF::loadView('widget.trainingPDF', compact('cadets', 'training'));
+        return $pdf->download('pdf_file.pdf');
     }
 }

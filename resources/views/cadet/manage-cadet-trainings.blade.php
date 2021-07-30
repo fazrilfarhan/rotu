@@ -19,6 +19,7 @@
                         <th>Year</th>
                         <th>Start Date</th>
                         <th>End Date</th>
+                        <th>Total Days</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -33,6 +34,7 @@
                         <td>{{ $training->year }}</td>
                         <td>{{ $training->startDate }}</td>
                         <td>{{ $training->endDate }}</td>
+                        <td>{{ $training->totalDays}}</td>
                         <td>
                             <a href="{{ route('register-trainings.show', $training->id) }}"><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">View</button></a>
                             <a href="{{ route('register-trainings.edit', $training->id) }}"><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Edit</button></a>

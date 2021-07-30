@@ -8,9 +8,8 @@
   <div class="col-sm-5">
     <div class="card-header">
         <h4><strong>Edit Date</strong></h4>
-        (Start Date: {{\Carbon\Carbon::parse($training->startDate)->format('d/m/Y')}} -
-        End Date: {{\Carbon\Carbon::parse($training->endDate)->format('d/m/Y')}})
-        
+        <b>Start Date: {{\Carbon\Carbon::parse($training->startDate)->format('d/m/Y')}} -
+        End Date: {{\Carbon\Carbon::parse($training->endDate)->format('d/m/Y')}}</b>
         <div class="card-header-right">                                                             
             <i class="icofont icofont-spinner-alt-5"></i>                                                         
         </div>

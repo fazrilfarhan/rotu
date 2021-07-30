@@ -445,6 +445,7 @@
                                 <div class="page-wrapper">
 
                                     <div class="page-body" >
+                                        @include('widget.message')
                                         @yield('content')
                                     </div>
 

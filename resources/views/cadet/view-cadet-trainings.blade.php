@@ -37,6 +37,7 @@
                         <th>Full Name</th>
                         <th>Date In</th>
                         <th>Date Out</th>
+                        <th>Registered Days</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@
                         <td>{{$cadet->cadetName}}</td>
                         <td>{{$cadet->pivot->dateIn}}</td>
                         <td>{{$cadet->pivot->dateOut}}</td>
+                        <td>{{$cadet->registeredDays}}</td>
                     </tr>
                     @endforeach
                 </tbody>

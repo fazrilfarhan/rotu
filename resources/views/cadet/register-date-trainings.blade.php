@@ -8,12 +8,14 @@
   <div class="col-sm-5">
     <div class="card-header">
         <h4><strong>Register Training</strong></h4>
+        <b>Start Date: {{\Carbon\Carbon::parse($training->startDate)->format('d/m/Y')}} -
+        End Date: {{\Carbon\Carbon::parse($training->endDate)->format('d/m/Y')}}</b>
         <div class="card-header-right">                                                             
             <i class="icofont icofont-spinner-alt-5"></i>                                                         
         </div>
     </div>
     <div class="card-block tooltip-icon button-list">
-      <form action=" {{ route('register-trainings.store', $id) }} " method="POST">
+      <form action=" {{ route('register-trainings.store', $training->id) }} " method="POST">
         @csrf
       <div class="input-group">
         <span class="input-group-addon" id="dateIn"><i class="icofont icofont-user-alt-3"></i></span>

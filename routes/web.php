@@ -62,8 +62,7 @@ Route::get('/register-trainings/create', [App\Http\Controllers\Cadet\CadetEquipm
 
 Route::resource('/cadet-equipments', App\Http\Controllers\Cadet\CadetEquipmentController::class);
 
-
 Route::get('/profile-cadet', [\App\Http\Controllers\Cadet\CadetProfileController::class, 'profile'])->name('profile-cadet');
 
-
-
+Route::get('/send-email', [App\Http\Controllers\MailController::class, 'sendEmail']);
+Route::get('/training/PDF/{id}', [App\Http\Controllers\Trainer\TrainingController::class, 'print']);

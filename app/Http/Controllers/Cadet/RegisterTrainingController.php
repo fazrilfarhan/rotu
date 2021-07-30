@@ -11,39 +11,28 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Builder\TraitUse;
+use Carbon\Carbon;
+use Session;
 
 class RegisterTrainingController extends Controller
 {
     // Register Training
     
     public function main()
-    {        
+    {       
         $user = Auth::user();
         $cadet = Cadet::where('cadetName', $user->fullName)->first();
         $trainings = DB::table("trainings")->select('*')->whereNotIn('id',function($query) use ($cadet) {
-
             $query->select('training_id')->from('registrations')->where('cadet_id', '=', $cadet->id);
-         
-         })->get();
-
-        // $sql = DB::table("trainings")->select('*')->whereNotIn('id',function($query) use ($cadet) {
-
-        //     $query->select('training_id')->from('registrations')->where('cadet_id', '=', $cadet->id);
-         
-        //  })->toSql();
-
-        //  dd($sql);
-        // pilih training yg takde dlm registrations
-        // select * from trainings where t_id NOT IN (select * from registrations)
-
-        // pilih training yg takde dlm registrations
-        // select * from trainings where t_id NOT IN (select * from registrations )
+        })->get();
         return view('cadet.register-cadet-trainings', compact('trainings'));
     }
     
     public function create($id)
     {
-        return view('cadet.register-date-trainings', ['id' => $id]);
+        $training = Training::find($id);
+
+        return view('cadet.register-date-trainings', compact('training'));
     }
 
     // End Register Training
@@ -54,11 +43,15 @@ class RegisterTrainingController extends Controller
     {
         $user=Auth::user();
         $cadet=$user->userable;
-        // dd($cadet);
         $trainings = $cadet->trainings;
 
         // $cadets = Cadet::has('trainings')->with(['user' , 'trainings'])->paginate(5);
-
+        
+        foreach ($trainings as $training) {
+            $in = new Carbon($training->startDate);
+            $out = new Carbon($training->endDate);
+            $training->totalDays = $out->diffInDays($in);
+        }
         return view('cadet.manage-cadet-trainings', compact('trainings'));
     }
 
@@ -71,12 +64,35 @@ class RegisterTrainingController extends Controller
 
         if (Auth::check()) {
             $cadet=Auth::user()->userable;
-            $cadet->trainings()->attach($id, ['dateIn'=>$request->dateIn, 'dateOut'=>$request->dateOut]);
-            
-            return redirect()->route('register-trainings.index', $id);
+            $training = Training::find($id);
+
+            $trainStart = $training->startDate;
+            $trainEnd = $training->endDate;
+            $regIn = $request->dateIn;
+            $regOut = $request->dateOut;
+            if($regIn < $trainStart) {
+                return redirect()->back()->with('error', 'Error : Date In cannot be before Start Date');
+            }
+            if($regIn > $trainEnd) {
+                return redirect()->back()->with('error', 'Error : Date In cannot be after End Date');
+            }
+            if($regOut > $trainEnd) {
+                return redirect()->back()->with('error', 'Error : Date Out cannot be after End Date');
+            }
+            if($regOut < $trainStart) {
+                return redirect()->back()->with('error', 'Error : Date Out cannot be before Start Date');
+            }
+            if($regOut <= $regIn) {
+                return redirect()->back()->with('error', 'Error : Date Out cannot be before Date In');
+            }
+            // $cadet, $training, $regIn, $regOut
+            $emailItems = compact("cadet", "training", "regIn", "regOut");
+            Session::put('emailItem', $emailItems);
+            $cadet->trainings()->attach($id, ['dateIn' => $regIn, 'dateOut' => $regOut]);
+            return redirect('/send-email');
         }
         else{
-            return redirect()->route('register-trainings.index', $id);
+            return redirect()->route('register-trainings.index');
 
         }
     }
@@ -84,9 +100,12 @@ class RegisterTrainingController extends Controller
     public function show($id)
     {
         $training = Training::find($id);
-        // $training = DB::table('trainings')->find($registration->training_id);
-        // $cadets = DB::table('cadets')->find($registration->cadet_id);
         $cadets = $training->cadets;
+        foreach ($cadets as $cadet) {
+            $in = new Carbon($cadet->pivot->dateIn);
+            $out = new Carbon($cadet->pivot->dateOut);
+            $cadet->registeredDays = $out->diffInDays($in);
+        }
         return view('cadet.view-cadet-trainings', compact('cadets'));
     }
 
@@ -102,9 +121,29 @@ class RegisterTrainingController extends Controller
     public function update(Request $request, $id)
     {
         $registration = Registration::find($id);
-        $registration->dateIn = $request->dateIn;
-        $registration->dateOut = $request->dateOut;
-        // dd("ID:".$id."  In:".$request->dateIn."  Out:". $request->dateIn);
+        $training = Training::find($registration->training_id);
+
+        $trainStart = $training->startDate;
+        $trainEnd = $training->endDate;
+        $regIn = $request->dateIn;
+        $regOut = $request->dateOut;
+        if($regIn < $trainStart) {
+            return redirect()->back()->with('error', 'Error : Date In cannot be before Start Date');
+        }
+        if($regIn > $trainEnd) {
+            return redirect()->back()->with('error', 'Error : Date In cannot be after End Date');
+        }
+        if($regOut > $trainEnd) {
+            return redirect()->back()->with('error', 'Error : Date Out cannot be after End Date');
+        }
+        if($regOut < $trainStart) {
+            return redirect()->back()->with('error', 'Error : Date Out cannot be before Start Date');
+        }
+        if($regOut <= $regIn) {
+            return redirect()->back()->with('error', 'Error : Date Out cannot be before Date In');
+        }
+        $registration->dateIn = $regIn;
+        $registration->dateOut = $regOut;
         $registration->save();
 
         return redirect()->route('register-trainings.index');
