@@ -11,7 +11,7 @@
                     <div class="card-block-small">
                         <i class="ti-medall bg-c-dark-green card1-icon"></i>
                         <span class="text-c-dark-green f-w-600">Total Trainers</span>
-                        <h4>10</h4>
+                        <h4>5</h4>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     <div class="card-block-small">
                         <i class="ti-user bg-c-dark-green card1-icon"></i>
                         <span class="text-c-dark-green f-w-600">Total Cadets</span>
-                        <h4>300</h4>
+                        <h4>20</h4>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="card-block-small">
                         <i class="ti-anchor bg-c-dark-green card1-icon"></i>
                         <span class="text-c-dark-green f-w-600">Total Trainings</span>
-                        <h4>10</h4>
+                        <h4>3</h4>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     <div class="card-block-small">
                         <i class="ti-agenda bg-c-dark-green card1-icon"></i>
                         <span class="text-c-dark-green f-w-600">Total Equipments</span>
-                        <h4>300</h4>
+                        <h4>1500</h4>
                     </div>
                 </div>
             </div>

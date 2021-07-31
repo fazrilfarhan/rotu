@@ -18,7 +18,7 @@
             @method('PUT')
             @csrf
             <div class="input-group">
-                <span class="input-group-addon" id="rank"><i class="icofont icofont-user-alt-4"></i></span>
+                <span class="input-group-addon" id="rank"><i class="ti-medall-alt"></i></span>
                     <select name="rank" class="form-control @error('rank') is-invalid @enderror">
                         <option value="">Enter Rank</option>
                         <option value="Lans Koperal" @if($trainer->trainerRank == 'Lans Koperal') selected @endif>Lans Koperal</option>
@@ -31,11 +31,11 @@
                     @enderror
             </div>
             <div class="input-group">
-                <span class="input-group-addon" id="fullname"><i class="icofont icofont-user-alt-3"></i></span>
+                <span class="input-group-addon" id="fullname"><i class="ti-user"></i></span>
                 <input type="text" class="form-control" placeholder="Enter Full Name" title="Enter Full Name" data-toggle="tooltip" name="fullname" value="{{$trainer->user->fullName}}" required>
             </div>
             <div class="input-group">
-                <span class="input-group-addon" id="military-number"><i class="icofont icofont-user-alt-3"></i></span>
+                <span class="input-group-addon" id="military-number"><i class="ti-id-badge"></i></span>
                 <input type="text" class="form-control" placeholder="Enter Military Number" title="Enter Military Number" data-toggle="tooltip" name="military_number" value="{{$trainer->trainerNum}}" required>
             </div>
             <div class="input-group">

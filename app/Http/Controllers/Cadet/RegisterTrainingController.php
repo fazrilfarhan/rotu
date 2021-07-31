@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Builder\TraitUse;
 use Carbon\Carbon;
-use Session;
+// use Session;
+use Illuminate\Support\Facades\Session;
 
 class RegisterTrainingController extends Controller
 {

@@ -19,7 +19,6 @@ class CadetProfileController extends Controller
     {
         // dd($request);
         $request->validate([
-            'military_number' => 'required',
             'rank' => 'required',
             'fullName' => 'required',
             'gender' => 'required',
@@ -29,7 +28,6 @@ class CadetProfileController extends Controller
         ]);
 
         $cadet = Cadet::find($id);
-        $cadet->cadetID = $request->military_number;
         $cadet->cadetRank = $request->rank;
         $cadet->cadetName = $request->fullName;
         $cadet->cadetGender = $request->gender;

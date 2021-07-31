@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('pageTitle', 'Manage Trainings')
+@section('pageTitle', 'Manage Training Registration')
 
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        <h4><strong>Manage Trainings</strong></h4>
+        <h4><strong>Manage Training Registration</strong></h4>
         <div class="table-responsive">
             <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
             </div>
@@ -42,7 +42,7 @@
                             <a href="#" onclick="
                                 event.preventDefault();
                                 document.getElementById('delete').submit();
-                            "><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Delete</button></a>
+                            "><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Unregister</button></a>
                             {{-- <a href="{{ route('trainings.edit', $training->id) }}">Edit</a>--}}
                             <form id="delete" action="{{ route('register-trainings.destroy', $training->id)  }}" method="POST" class="d-inline">
                                 @csrf

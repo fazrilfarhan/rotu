@@ -112,10 +112,10 @@
                         </ul>
                         <ul class="nav-right">
                             <li class="header-notification">
-                                <a href="#!">
+                                {{-- <a href="#!">
                                     <i class="ti-bell"></i>
                                     <span class="badge bg-c-pink"></span>
-                                </a>
+                                </a> --}}
                                 <ul class="show-notification">
                                     <li>
                                         <h6>Notifications</h6>
@@ -182,11 +182,11 @@
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="/messages-trainer">
                                             <i class="ti-email"></i> My Messages
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     @endif
                                     @if (Auth::user()->role == 'cadet')
                                     <li>
@@ -194,11 +194,11 @@
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="/messages-cadet">
                                             <i class="ti-email"></i> My Messages
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     @endif
                                     <li>
                                         <a href="#" onclick="

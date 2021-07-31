@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('pageTitle', 'Profile')
+@section('pageTitle', 'My Profile')
 
 @section('content')
 
@@ -18,20 +18,7 @@
             @method('PUT')
             @csrf
                 <div class="input-group">
-                    <span class="input-group-addon" id="military_number"><i class="icofont icofont-user-alt-3"></i></span>
-                    <input type="text" class="form-control" placeholder="Enter Full Name" title="Enter Full Name" data-toggle="tooltip" name="military_number" value="{{$cadet->cadetID}}" required>
-                </div>
-                {{-- <div class="input-group">
-                    <span class="input-group-addon" id="military_number"><i class="icofont icofont-user-alt-4"></i></span>
-                        <input type="text" class="form-control" placeholder="Enter Military Number" title="Enter Military Number" data-toggle="tooltip" name="military_number" value="{{$cadet->cadetID}}" required>
-                        @error('military_number')
-                            <small class="invalid-feedback" role="alert">
-                                {{ $message }}
-                            </small>
-                        @enderror
-                </div> --}}
-                <div class="input-group">
-                    <span class="input-group-addon" id="rank"><i class="icofont icofont-user-alt-4"></i></span>
+                    <span class="input-group-addon" id="militaryNumber"><i class="ti-id-badge"></i></span>
                         <select name="rank" class="form-control @error('rank') is-invalid @enderror" value="{{ $cadet->cadetRank }}">
                             <option value="">Enter Rank</option>
                             <option value="PK I" @if($cadet->cadetRank == 'PK I') selected @endif>PK I</option>
@@ -50,20 +37,11 @@
                     @enderror
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon" id="fullName"><i class="icofont icofont-user-alt-3"></i></span>
+                    <span class="input-group-addon" id="militaryNumber"><i class="ti-user"></i></span>
                     <input type="text" class="form-control" placeholder="Enter Full Name" title="Enter Full Name" data-toggle="tooltip" name="fullName" value="{{$cadet->user->fullName}}" required>
                 </div>
-                {{-- <div class="input-group">
-                    <span class="input-group-addon" id="fullName"><i class="icofont icofont-user-alt-4"></i></span>
-                        <input type="text" class="form-control @error('fullName') is-invalid @enderror" placeholder="Enter Full Name" title="Enter Full Name" data-toggle="tooltip" name="fullname" value="{{$cadet->user->fullName , $cadet->cadetName}}" required>
-                        @error('fullName')
-                        <small class="invalid-feedback" role="alert">
-                            {{ $message }}
-                        </small>
-                    @enderror
-                </div> --}}
                 <div class="input-group">
-                    <span class="input-group-addon" id="gender"><i class="icofont icofont-user-alt-4"></i></span>
+                    <span class="input-group-addon" id="militaryNumber"><i class="ti-anchor"></i></span>
                         <select name="gender" class="form-control @error('gender') is-invalid @enderror" value="{{ $cadet->cadetGender }}" required>
                             <option value="">Enter Gender</option>
                             <option value="Male" @if($cadet->cadetGender == 'Male') selected @endif>Male</option>
@@ -76,7 +54,7 @@
                     @enderror
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon" id="phoneNumber"><i class="icofont icofont-user-alt-4"></i></span>
+                    <span class="input-group-addon" id="militaryNumber"><i class="ti-tablet"></i></span>
                         <input type="numeric" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" placeholder="Phone Number" value="{{ $cadet->phoneNum }}" required>
                         @error('phoneNumber')
                         <small class="invalid-feedback" role="alert">
@@ -85,7 +63,7 @@
                     @enderror
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon" id="address"><i class="icofont icofont-user-alt-4"></i></span>
+                    <span class="input-group-addon" id="militaryNumber"><i class="ti-tag"></i></span>
                         <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" placeholder="Address" value="{{ $cadet->cadetAddress }}" required>
                         <span class="md-line"></span>
                         @error('address')
@@ -95,7 +73,7 @@
                     @enderror
                 </div>   
                 <div class="input-group">
-                    <span class="input-group-addon" id="email'"><i class="icofont icofont-user-alt-4"></i></span>
+                    <span class="input-group-addon" id="militaryNumber"><i class="ti-email"></i></span>
                         <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email Address" value="{{ $cadet->user->email }}" required>
                         @error('email')
                         <small class="invalid-feedback" role="alert">

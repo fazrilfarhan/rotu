@@ -20,33 +20,33 @@
       <form action=" {{ route('trainings.store') }} " method="POST">
         @csrf
         <div class="input-group">
-          <span class="input-group-addon"><i class="icofont icofont-user-alt-4"></i></span>
+          <span class="input-group-addon"><i class="ti-server"></i></span>
           <select name="level" class="form-control">
             <option value="">Level</option>
-            <option value="Junior">Junior</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Senior">Senior</option>
+            <option value="JUNIOR">JUNIOR</option>
+            <option value="INTERMEDIATE">INTERMEDIATE</option>
+            <option value="SENIOR">SENIOR</option>
           </select>
         </div>  
         <div class="input-group">
-            <span class="input-group-addon"><i class="icofont icofont-user-alt-4"></i></span>
+            <span class="input-group-addon"><i class="ti-clipboard"></i></span>
             <select name="trainingName" class="form-control">
               <option value="">Training Name</option>
-              <option value="Latihan Tempatan I">Latihan Tempatan I</option>
-              <option value="Latihan Tempatan II">Latihan Tempatan II</option>
-              <option value="Latihan Tempatan III">Latihan Tempatan III</option>
-              <option value="Latihan Tempatan IV">Latihan Tempatan IV</option>
-              <option value="Latihan Tempatan V">Latihan Tempatan V</option>
-              <option value="Latihan Berterusan">Latihan Berterusan</option>
-              <option value="Latihan Kem Tahunan">Latihan Kem Tahunan</option>
+              <option value="LATIHAN TEMPATAN I">LATIHAN TEMPATAN I</option>
+              <option value="LATIHAN TEMPATAN II">LATIHAN TEMPATAN II</option>
+              <option value="LATIHAN TEMPATAN III">LATIHAN TEMPATAN III</option>
+              <option value="LATIHAN TEMPATAN IV">LATIHAN TEMPATAN IV</option>
+              <option value="LATIHAN TEMPATAN V">LATIHAN TEMPATAN V</option>
+              <option value="LATIHAN BERTERUSAN">LATIHAN BERTERUSAN</option>
+              <option value="LATIHAN KEM TAHUNAN">LATIHAN KEM TAHUNAN</option>
             </select>
         </div>
         <div class="input-group">
-          <span class="input-group-addon" id="year"><i class="icofont icofont-user-alt-3"></i></span>
+          <span class="input-group-addon" id="year"><i class="ti-agenda"></i></span>
           <input type="year" class="form-control" placeholder="Enter Year" title="Enter Year" data-toggle="tooltip" name="year" required>
         </div>
         <div class="input-group">
-          <span class="input-group-addon" id="startDate"><i class="icofont icofont-user-alt-3"></i></span>
+          <span class="input-group-addon" id="startDate"><i class="ti-time"></i></span>
           <input type="date" class="form-control @error('startDate') is-invalid @enderror" placeholder="Valid To" title="Enter Start Date" data-toggle="tooltip" name="startDate" required>
           {{-- <input name = "startDate" type="date" class = "form-control datepicker valid_to" placeholder = "Valid To" data-date-start-date="d"> --}}
           @error('startDate')
@@ -58,7 +58,7 @@
 
         </div>
         <div class="input-group">
-          <span class="input-group-addon" id="endDate"><i class="icofont icofont-user-alt-3"></i></span>
+          <span class="input-group-addon" id="endDate"><i class="ti-time"></i></span>
           <input type="date" class="form-control" placeholder="Enter End Date" title="Enter End Date" data-toggle="tooltip" name="endDate" required>
         </div>
         <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right" title="submit">Submit
