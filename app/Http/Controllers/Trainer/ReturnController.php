@@ -28,6 +28,6 @@ class ReturnController extends Controller
         }
         $cadetApproved = Cadet::has('approved')->get();
         $cadetReturned = Cadet::has('returned')->get();
-        return view('trainer.equipments-return', compact('cadetApproved', 'cadetReturned'));
+        return view('trainer.equipments-return', compact('cadetApproved', 'cadetReturned'))->with('success', 'Equipment returned successfully');
     }
 }

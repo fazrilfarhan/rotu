@@ -29,6 +29,6 @@ class ApprovalController extends Controller
         }
         $cadets = Cadet::has('pending')->get();
         $approvedList = Cadet::has('approved')->get();
-        return view('trainer.equipments-approval', compact('cadets', 'approvedList'));
+        return view('trainer.equipments-approval', compact('cadets', 'approvedList'))->with('success', 'Equipment application approved successfully');
     }
 }
