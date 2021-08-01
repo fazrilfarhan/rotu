@@ -35,17 +35,22 @@
                         <td>{{ $training->startDate}}</td>
                         <td>{{ $training->endDate}}</td>
                         <td>{{ $training->totalDays}}</td>
-                        <td>    
-                            <a href="{{ route('trainings.show', $training->id) }}"><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">View</button></a>
-                            <a href="{{ route('trainings.edit', $training->id) }}"><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Edit</button></a>
-                            <a href="#" onclick="
-                                event.preventDefault();
-                                document.getElementById('delete').submit();
-                            "><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Delete</button></a>
-                            <form id="delete" action="{{ route('trainings.destroy', $training->id) }}" method="POST" class="d-none">
+                        <td class="d-flex">    
+                            <a href="{{ route('trainings.show', $training->id) }}"><button type="button"  class="btn btn-default-border-blk mr-1">View</button></a>
+                            <a href="{{ route('trainings.edit', $training->id) }}"><button type="button"  class="btn btn-default-border-blk mr-1">Edit</button></a>
+                            <form action="/trainings/{{$training->id}}" method="POST">
                                 @method('DELETE')
                                 @csrf
+                                <button type="submit"  class="btn btn-default-border-blk">Delete</button>
                             </form>
+                            {{-- <a href="#" onclick="
+                                event.preventDefault();
+                                document.getElementById('delete').submit();
+                            "><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Delete {{$training->id}}</button></a>
+                            <form id="delete" action="/trainings/{{$training->id}}" method="POST" class="d-none">
+                                @method('DELETE')
+                                @csrf
+                            </form> --}}
                         </td>
                     </tr>
                     {{-- <tr>

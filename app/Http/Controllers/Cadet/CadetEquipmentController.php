@@ -45,13 +45,29 @@ class CadetEquipmentController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+        $cadet = Cadet::where('cadetName', $user->fullName)->first();
         // query
         // if(takde) {
         //     return view();
         // }
+        // dd("Haha ");
+
+        $pendingItems = Cadet::whereHas('pending', function($query) use ($cadet) {
+            $query->where('cadet_id', $cadet->id);
+        })->get();
+        $approvedItems = Cadet::whereHas('approved', function($query) use ($cadet) {
+            $query->where('cadet_id', $cadet->id);
+        })->get();
+        if (count($pendingItems) || count($approvedItems)) {
+            return redirect()->back()->with('error', 'You have equipments that have not been returned yet!');
+        }
+        dd("Out error ".$pendingItems." | ".$approvedItems);
+
+        
+        // Request item that's going to be borrowed
         $equipmentArr = $request->input('equipmentArray.*');
-        $user = Auth::user();
-        $cadet = Cadet::where('cadetName', $user->fullName)->first();
+        // Detach any existing returned equipment
         $cadet->equipments()->detach();
         foreach ($equipmentArr as $value) {
             $cadet->equipments()->attach($value, ['status' => 'PENDING']);

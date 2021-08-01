@@ -118,7 +118,7 @@ class TrainerController extends Controller
             'email' => $request->email
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Profile updated successfully');
     }
 
     /**

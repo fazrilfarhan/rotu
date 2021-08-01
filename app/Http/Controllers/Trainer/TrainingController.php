@@ -27,7 +27,7 @@ class TrainingController extends Controller
         foreach ($trainings as $training) {
             $in = new Carbon($training->startDate);
             $out = new Carbon($training->endDate);
-            $training->totalDays = $out->diffInDays($in);
+            $training->totalDays = $out->diffInDays($in) + 1;
         }
         return view('trainer.manage-trainings', compact('trainings'));
     }
@@ -82,7 +82,7 @@ class TrainingController extends Controller
         foreach ($cadets as $cadet) {
             $in = new Carbon($cadet->pivot->dateIn);
             $out = new Carbon($cadet->pivot->dateOut);
-            $cadet->registeredDays = $out->diffInDays($in);
+            $cadet->registeredDays = $out->diffInDays($in) + 1;
         }
         return view('trainer.view-trainings', compact('cadets', 'id'));
     }
@@ -139,7 +139,7 @@ class TrainingController extends Controller
         $training = Training::find($id);
         $training->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Training deleted succcessfully');
         
     }
 
@@ -150,7 +150,7 @@ class TrainingController extends Controller
         foreach ($cadets as $cadet) {
             $in = new Carbon($cadet->pivot->dateIn);
             $out = new Carbon($cadet->pivot->dateOut);
-            $cadet->registeredDays = $out->diffInDays($in);
+            $cadet->registeredDays = $out->diffInDays($in) + 1;
         }
         $pdf =  PDF::loadView('widget.trainingPDF', compact('cadets', 'training'));
         return $pdf->download('pdf_file.pdf');

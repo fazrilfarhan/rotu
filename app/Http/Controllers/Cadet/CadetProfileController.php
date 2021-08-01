@@ -40,6 +40,6 @@ class CadetProfileController extends Controller
             'email' => $request->email
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Profile updated successfully');
     }
 }

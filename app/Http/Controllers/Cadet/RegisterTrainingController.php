@@ -51,7 +51,7 @@ class RegisterTrainingController extends Controller
         foreach ($trainings as $training) {
             $in = new Carbon($training->startDate);
             $out = new Carbon($training->endDate);
-            $training->totalDays = $out->diffInDays($in);
+            $training->totalDays = $out->diffInDays($in) + 1;
         }
         return view('cadet.manage-cadet-trainings', compact('trainings'));
     }
@@ -105,7 +105,7 @@ class RegisterTrainingController extends Controller
         foreach ($cadets as $cadet) {
             $in = new Carbon($cadet->pivot->dateIn);
             $out = new Carbon($cadet->pivot->dateOut);
-            $cadet->registeredDays = $out->diffInDays($in);
+            $cadet->registeredDays = $out->diffInDays($in) + 1;
         }
         return view('cadet.view-cadet-trainings', compact('cadets'));
     }
@@ -147,7 +147,7 @@ class RegisterTrainingController extends Controller
         $registration->dateOut = $regOut;
         $registration->save();
 
-        return redirect()->route('register-trainings.index');
+        return redirect()->route('register-trainings.index')->with('success', 'Training registration date updated successfully');
     }
 
     public function destroy($id)
@@ -155,7 +155,7 @@ class RegisterTrainingController extends Controller
         $user = Auth::user();
         $cadet = Cadet::where('cadetName', $user->fullName)->first();
         $registration = DB::table('registrations')->where('cadet_id', '=', $cadet->id)->where('training_id', '=', $id)->delete();        
-        return redirect()->route('register-trainings.index');
+        return redirect()->route('register-trainings.index')->with('success', 'You have unregistered from the training');
     }
 }
 
