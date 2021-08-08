@@ -38,7 +38,7 @@
                         <td class="d-flex">
                             <a href="{{ route('register-trainings.show', $training->id) }}"><button type="button"  class="btn btn-default-border-blk mr-1">View</button></a>
                             <a href="{{ route('register-trainings.edit', $training->id) }}"><button type="button"  class="btn btn-default-border-blk mr-1">Edit</button></a>
-                            <form action="/trainings/{{$training->id}}" method="POST">
+                            <form action="{{ route('register-trainings.destroy', $training->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit"  class="btn btn-default-border-blk">Delete</button>

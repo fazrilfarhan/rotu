@@ -154,7 +154,7 @@ class RegisterTrainingController extends Controller
     {
         $user = Auth::user();
         $cadet = Cadet::where('cadetName', $user->fullName)->first();
-        $registration = DB::table('registrations')->where('cadet_id', '=', $cadet->id)->where('training_id', '=', $id)->delete();        
+        DB::table('registrations')->where('cadet_id', '=', $cadet->id)->where('training_id', '=', $id)->delete();        
         return redirect()->route('register-trainings.index')->with('success', 'You have unregistered from the training');
     }
 }
