@@ -13,7 +13,7 @@
             <table class="table">
                 <thead class="bg-primary text-white">
                     <tr>
-                        <th>#</th>
+                        <th>Num</th>
                         <th>Level</th>
                         <th>Training Name</th>
                         <th>Year</th>
@@ -28,7 +28,7 @@
                     {{-- @foreach ($cadets as $cadet) --}}
                         {{-- @foreach ($cadet->trainings as $training) --}}
                         <tr>
-                        <td>#</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{ $training->level }}</td>
                         <td>{{ $training->trainingName }}</td>
                         <td>{{ $training->year }}</td>
