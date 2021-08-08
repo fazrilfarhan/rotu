@@ -13,7 +13,7 @@
             <table class="table">
                 <thead class="bg-primary text-white">
                     <tr>
-                        <th>#</th>
+                        <th>Num</th>
                         <th>Military Number</th>
                         <th>Rank</th>
                         <th>Name</th>
@@ -23,7 +23,7 @@
                 <tbody>
                     @foreach($cadets as $cadet)
                     <tr>
-                        <td>#</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{ $cadet->cadetID }}</td>
                         <td>{{ $cadet->cadetRank}}</td>
                         <td>{{ $cadet->cadetName}}</td>

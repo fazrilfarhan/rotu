@@ -62,7 +62,7 @@ class CadetEquipmentController extends Controller
         if (count($pendingItems) || count($approvedItems)) {
             return redirect()->back()->with('error', 'You have equipments that have not been returned yet!');
         }
-        dd("Out error ".$pendingItems." | ".$approvedItems);
+        // dd("Out error ".$pendingItems." | ".$approvedItems);
 
         
         // Request item that's going to be borrowed

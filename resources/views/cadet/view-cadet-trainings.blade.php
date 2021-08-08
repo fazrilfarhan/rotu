@@ -31,7 +31,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Num</th>
                         <th>Military Number</th>
                         <th>Rank</th>
                         <th>Full Name</th>
@@ -44,7 +44,7 @@
                     @foreach($cadets as $cadet)
                     <tr>
                         {{-- <td>{{$cadet->id}}</td> --}}
-                        <td>#</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{$cadet->cadetID}}</td>
                         <td>{{$cadet->cadetRank}}</td>
                         <td>{{$cadet->cadetName}}</td>

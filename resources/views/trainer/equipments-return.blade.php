@@ -15,6 +15,7 @@
             <table class="table">
                 <thead class="bg-primary text-white">
                     <tr>
+                        <th>Num</th>
                         <th>Military Number</th>
                         <th>Rank</th>
                         <th>Full Name</th>
@@ -27,6 +28,7 @@
                 <tbody>
                     @foreach($cadetApproved as $cadet)
                         <tr>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$cadet->cadetID}}</td>
                             <td>{{$cadet->cadetRank}}</td>
                             <td>{{$cadet->cadetName}}</td>
@@ -68,6 +70,7 @@
             <table class="table">
                 <thead class="bg-primary text-white">
                     <tr>
+                        <th>Num</th>
                         <th>Military Number</th>
                         <th>Rank</th>
                         <th>Full Name</th>
@@ -80,6 +83,7 @@
                 <tbody>
                     @foreach($cadetReturned as $cadet)
                         <tr>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$cadet->cadetID}}</td>
                             <td>{{$cadet->cadetRank}}</td>
                             <td>{{$cadet->cadetName}}</td>

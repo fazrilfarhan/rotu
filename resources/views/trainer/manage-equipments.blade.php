@@ -22,7 +22,7 @@
                 <tbody>
                     @foreach($equipments as $equipment)
                     <tr>
-                        <td>{{ $equipment->id }}</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{ $equipment->equipName }}</td>
                         <td>{{ $equipment->quantity}}</td>
                         <td>
