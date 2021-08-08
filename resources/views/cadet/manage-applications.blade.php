@@ -8,33 +8,32 @@
     <div class="card-header">
         <h4><strong>Manage Applications</strong></h4>
         <div class="table-responsive">
-
-        <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
-    </div>
-    <div class="card-block table-border-style">
-            <table class="table" style="table-layout: fixed">
-                <thead class="bg-primary text-white">
-                    <tr>
-                        <th style="width: 60%">Equipments</th>
-                        <th>Status Application</th>
-                        <th>Action</th>    
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="white-space: pre-wrap; text-align: left">@foreach ($details as $detail){{$detail->equipName}}, @endforeach</td>
-                        <td>
-                            {{$item->pivot->status}}
-                        </td>
-                        <th>
-                            <a href=""><button type="button"  class="btn btn-default-border-blk" class="modal-body" data-toggle="modal"  data-backdrop="static" data-keyboard="false">Print</button></a>
-                        </th> 
-                    </tr>
-
-                </tbody>
-
-            </table>
+            <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
         </div>
+    </div>
+    <div class="card-block">
+        <table class="table">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th style="width: 60%">Equipments</th>
+                    <th>Status Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul style="list-style-position:inside;">
+                            @foreach ($details as $detail)
+                                <li style="list-style-type: disc;">{{$detail->equipName}}</li>
+                            @endforeach
+                        </ul>
+                    </td>
+                    <td>
+                        {{$item->pivot->status}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection
