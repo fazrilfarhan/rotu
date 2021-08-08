@@ -117,7 +117,7 @@
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon" id="militaryNumber"><i class="ti-lock"></i></span>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Choose Password">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Create Password (Password must 8 characters long)">
                                 <span class="md-line"></span>
                                 @error('password')
                                 <small class="invalid-feedback" role="alert">
@@ -127,7 +127,7 @@
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon" id="militaryNumber"><i class="ti-lock"></i></span>
-                                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password (Password must 8 characters long)" required autocomplete="new-password">
                                 <span class="md-line"></span>
                             </div>
                             <div class="row m-t-30">

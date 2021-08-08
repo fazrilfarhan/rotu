@@ -15,7 +15,7 @@
             <table class="table">
                 <thead class="bg-primary text-white">
                     <tr>
-                        <th>#</th>
+                        <th>Num</th>
                         <th>Officer ID</th>
                         <th>Rank</th>
                         <th>Name</th>
@@ -26,7 +26,7 @@
                     @foreach($trainers as $trainer)
                     @if($trainer->id !== Auth::user()->userable->id)
                     <tr>
-                        <td>#</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{ $trainer->trainerNum }}</td>
                         <td>{{ $trainer->trainerRank}}</td>
                         <td>{{ $trainer->user->fullName }}</td>
