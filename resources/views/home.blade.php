@@ -3,8 +3,15 @@
 @section('pageTitle', 'UiTM ROTU Army Management System ')
 
 @section('content')
-
-        <div class="row">
+        <div class="row mb-4 text-center">
+            <div class="col-12 mb-3">
+                <span style="text-align: center; font-size: 40px; font-weight: bold; color: white; text-shadow: 0px 0px 10px black;">UiTM ROTU ARMY MANAGEMENT SYSTEM</span>
+            </div>
+            <div class="col-12">
+                <img src="./IMAGE/rotu1.jpg" alt="" style="width: 100%; border-radius: 1%; box-shadow: 0px 0px 10px 0px; object-fit: contain;">
+            </div>
+        </div>
+        <div class="row" style="visibility: hidden">
             <!-- card1 start -->
             <div class="col-md-6 col-xl-3">
                 <div class="card widget-card-1">
@@ -197,15 +204,13 @@
                                             <a href="#!"><img src="assets/images/avatar-3.jpg" data-toggle="tooltip" title="Alia" alt="" class="img-40 m-l-10"></a>
                                             <a href="#!"><img src="assets/images/avatar-2.jpg" data-toggle="tooltip" title="Josephin Doe" alt="" class="img-40 m-l-10"></a>
                                         </div> --}}
-                                    {{-- </label>
-                                </div>
+                                {{-- </label>
                             </div>
                         </div>
                     </div>
-                </div> --}}
-                <!-- Data widget End -->
-                
-            {{-- </div> --}}
+                </div>Haa???
+            </div> --}}
+            <!-- Data widget End -->
         </div>
     
 @endsection
