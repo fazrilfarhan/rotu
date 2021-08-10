@@ -47,11 +47,6 @@ class CadetEquipmentController extends Controller
     {
         $user = Auth::user();
         $cadet = Cadet::where('cadetName', $user->fullName)->first();
-        // query
-        // if(takde) {
-        //     return view();
-        // }
-        // dd("Haha ");
 
         $pendingItems = Cadet::whereHas('pending', function($query) use ($cadet) {
             $query->where('cadet_id', $cadet->id);
@@ -62,8 +57,6 @@ class CadetEquipmentController extends Controller
         if (count($pendingItems) || count($approvedItems)) {
             return redirect()->back()->with('error', 'You have equipments that have not been returned yet!');
         }
-        // dd("Out error ".$pendingItems." | ".$approvedItems);
-
         
         // Request item that's going to be borrowed
         $equipmentArr = $request->input('equipmentArray.*');
@@ -75,9 +68,6 @@ class CadetEquipmentController extends Controller
         $cadetX = Cadet::find($cadet->id);
         $item = $cadetX->equipments()->first();
         $details = $cadetX->equipments()->with('cadets')->get();
-        // dd($items);
-        // dd($details);
-        // $cadetItems = $cadet->equipments;
         return view('cadet.manage-applications', compact('cadet', 'item', 'details'));
     }
 

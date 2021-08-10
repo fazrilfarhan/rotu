@@ -62,7 +62,7 @@ class TrainerController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Trainer added successfully');
 
     }
 
