@@ -4,10 +4,42 @@
 
 @section('content')
 
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <!-- Page-header start -->
+        <div class="page-header card">
+            <div class="row align-items-end">
+                <div class="col-lg-8">
+                    <div class="page-header-title">
+                        <i class="ti-medall bg-c-dark-green card1-icon"></i>
+                        <div class="d-inline">
+                            <h4>My Profile</h4>
+                            <span>Edit the form and click on ‘Update’ after editing in the form.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="page-header-breadcrumb">
+                       <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="/home">
+                                <i class="icofont icofont-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="">My Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+
 <div class="card">
     <div class="col-sm-5">
     <div class="card-header">
-        <h4><strong>My Profile</strong></h4>
+        <h4>Profile Information Form</h4>
         <div class="card-header-right">                                                             
             <i class="icofont icofont-spinner-alt-5"></i>                                                         
         </div>

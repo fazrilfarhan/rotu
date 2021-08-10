@@ -34,7 +34,7 @@
           <span class="input-group-addon" id="quantity"><i class="icofont icofont-user-alt-3"></i></span>
           <input type="number" class="form-control" placeholder="Quantity" title="Quantity" data-toggle="tooltip" name="quantity" required>
         </div>
-        <button type="Submit" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right" title="submit">Submit
+        <button type="Submit" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right">Submit
         </button>
         </form>
       </div>

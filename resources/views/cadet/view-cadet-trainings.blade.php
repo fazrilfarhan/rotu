@@ -1,35 +1,51 @@
 @extends('layouts.app')
 
-@section('pageTitle', 'View Trainings')
+@section('pageTitle', 'View Registered Training')
 
 @section('content')
 
-
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <!-- Page-header start -->
+        <div class="page-header card">
+            <div class="row align-items-end">
+                <div class="col-lg-8">
+                    <div class="page-header-title">
+                        <i class="ti-anchor bg-c-dark-green card1-icon"></i>
+                        <div class="d-inline">
+                            <h4>View Registered Training</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="page-header-breadcrumb">
+                       <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="/home">
+                                <i class="icofont icofont-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="">Trainings</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="{{ route('register-trainings.index') }}">Manage Registration</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="">View</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
 
 <div class="card">
     <div class="card-header">
-        <h4><strong>View Trainings</strong></h4>
-        <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
-        <div class="card-header-right">                                                             
-            <i class="icofont icofont-spinner-alt-5"></i>                                                         
-        </div>
-<div class="form-group row">    
-    <div class="card-block tooltip-icon button-list"></div>
-        {{-- <span class="input-group-addon" id="level"><i class="icofont icofont-user-alt-3"></i></span>
-        <input type="text" data-toggle="tooltip" name="level" value="{{$training->level}}" readonly>
-        <span class="input-group-addon" id="trainingName"><i class="icofont icofont-user-alt-3"></i></span>
-        <input type="text" data-toggle="tooltip" name="trainingName" value="{{$training->trainingName}}" readonly>
-        <span class="input-group-addon" id="year"><i class="icofont icofont-user-alt-3"></i></span>
-        <input type="text" data-toggle="tooltip" name="year" value="{{$training->year}}" readonly>
-        <span class="input-group-addon" id="startDate"><i class="icofont icofont-user-alt-3"></i></span>
-        <input type="text" data-toggle="tooltip" name="startDate" value="{{$training->startDate}}" readonly>
-        <span class="input-group-addon" id="endDate"><i class="icofont icofont-user-alt-3"></i></span>
-        <input type="text" data-toggle="tooltip" name="endDate" value="{{$training->endDate}}" readonly> --}}
-    </div>
-    <div class="card-block table-border-style">
         <div class="table-responsive">
+            <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
+            </div>
             <table class="table">
-                <thead>
+                <thead class="bg-primary text-white">
                     <tr>
                         <th>Num</th>
                         <th>Military Number</th>

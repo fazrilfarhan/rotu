@@ -348,7 +348,7 @@
                                                 <a href="{{ route('register-trainings.main') }}">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                     <span class="pcoded-mtext"
-                                                        data-i18n="nav.basic-components.alert">Register Training</span>
+                                                        data-i18n="nav.basic-components.alert">Training Registration</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
@@ -357,8 +357,8 @@
                                         <li class=" ">
                                             <a href="{{ route('register-trainings.index') }}">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Manage
-                                                    Training</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Manage Registration
+                                                </span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -397,7 +397,7 @@
                                             <a href="/equipments-pending">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext"
-                                                    data-i18n="nav.basic-components.alert">Equipment Approval</span>
+                                                    data-i18n="nav.basic-components.alert">Application Approval</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>

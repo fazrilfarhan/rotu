@@ -1,12 +1,44 @@
 @extends('layouts.app')
 
-@section('pageTitle', 'Equipments Return')
+@section('pageTitle', 'Equipment Return')
 
 @section('content')
 
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <!-- Page-header start -->
+        <div class="page-header card">
+            <div class="row align-items-end">
+                <div class="col-lg-8">
+                    <div class="page-header-title">
+                        <i class="ti-agenda bg-c-dark-green card1-icon"></i>
+                        <div class="d-inline">
+                            <h4>Equipment Return</h4>
+                            <span>Click on ‘Return’ to return the lending equipment from Cadet Officers.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="page-header-breadcrumb">
+                       <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="/home">
+                                <i class="icofont icofont-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="">Equipment Return</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+
 <div class="card" background-color="#a69d82">
     <div class="card-header">
-        <h4><strong>Equipments Return</strong></h4>
+        <h4>List of Lending</h4>
         <div class="table-responsive">
 
         <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
@@ -63,10 +95,14 @@
 </div>
 <div>
 </div>
-<div class="card">
+<div class="card" background-color="#a69d82">
     <div class="card-header">
-        <h4 class="card-title"><b>Recently Return</b></h4>
+        <h4>Recently Return</h4>
         <div class="table-responsive">
+
+        <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
+    </div>
+    <div class="card-block table-border-style">
             <table class="table">
                 <thead class="bg-primary text-white">
                     <tr>

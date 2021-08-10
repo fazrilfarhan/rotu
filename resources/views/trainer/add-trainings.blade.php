@@ -8,10 +8,45 @@
 
 @section('content')
 
+<!-- Main-body start -->
+<div class="main-body">
+  <div class="page-wrapper">
+      <!-- Page-header start -->
+      <div class="page-header card">
+          <div class="row align-items-end">
+              <div class="col-lg-8">
+                  <div class="page-header-title">
+                    <i class="ti-anchor bg-c-dark-green card1-icon"></i>
+                    <div class="d-inline">
+                          <h4>Add Training</h4>
+                          <span>Fill up the form and click on ‘Submit’ after filling in the form.</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="page-header-breadcrumb">
+                     <ul class="breadcrumb-title">
+                      <li class="breadcrumb-item">
+                          <a href="/home">
+                              <i class="icofont icofont-home"></i>
+                          </a>
+                      </li>
+                      <li class="breadcrumb-item"><a href="">Trainings</a>
+                      </li>
+                      </li>
+                      <li class="breadcrumb-item"><a href="{{ route('trainings.create') }}">Add Training</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Page-header end -->
+
 <div class="card">
   <div class="col-sm-5">
     <div class="card-header">
-        <h4><strong>Add Training</strong></h4>
+        <h4>Training Information Form</h4>
         <div class="card-header-right">                                                             
             <i class="icofont icofont-spinner-alt-5"></i>                                                         
         </div>
@@ -61,7 +96,7 @@
           <span class="input-group-addon" id="endDate"><i class="ti-time"></i></span>
           <input type="date" class="form-control" placeholder="Enter End Date" title="Enter End Date" data-toggle="tooltip" name="endDate" required>
         </div>
-        <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right" title="submit">Submit
+        <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right">Submit
         </button>
       </form>
     </div>
