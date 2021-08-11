@@ -62,8 +62,11 @@ class CadetEquipmentController extends Controller
         $equipmentArr = $request->input('equipmentArray.*');
         // Detach any existing returned equipment
         $cadet->equipments()->detach();
-        foreach ($equipmentArr as $value) {
-            $cadet->equipments()->attach($value, ['status' => 'PENDING']);
+        foreach ($equipmentArr as $equipmentId) {
+            $cadet->equipments()->attach($equipmentId, ['status' => 'PENDING']);
+            $equipment = Equipment::find($equipmentId);
+            $equipment->quantity = $equipment->quantity - 1;
+            $equipment->save();
         }
         $cadetX = Cadet::find($cadet->id);
         $item = $cadetX->equipments()->first();

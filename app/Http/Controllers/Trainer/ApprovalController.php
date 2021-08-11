@@ -23,9 +23,6 @@ class ApprovalController extends Controller
             // DB::enableQueryLog();
             $cadet->equipments()->syncWithoutDetaching([$item->pivot->equipment_id => ['status'=>'APPROVED']]);
             // dd(DB::getQueryLog());
-            $equipment = Equipment::find($item->pivot->equipment_id);
-            $equipment->quantity = $equipment->quantity - 1;
-            $equipment->save();
         }
         $cadets = Cadet::has('pending')->get();
         $approvedList = Cadet::has('approved')->get();
