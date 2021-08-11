@@ -27,7 +27,7 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        // return view('trainer.add-equipments');
+        return view('trainer.add-equipments');
     }
 
     /**

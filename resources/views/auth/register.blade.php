@@ -11,9 +11,9 @@
                 <div class="signup-card card-block auth-body mr-auto ml-auto">
                     <form class="md-float-material" method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="text-center">
-                            <img src="assets/images/auth/logo.png" alt="logo.png">
-                        </div>
+                        {{-- <div class="text-center">
+                            <img src="{{ asset('template/assets/images/auth/logo.png') }}" alt="logo.png">
+                        </div> --}}
 
                         <div class="auth-box">
                             <div class="row m-b-20">
@@ -125,9 +125,11 @@
                             <div class="row m-t-30">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign Up</button>
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <a href="/login"><button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Back</button>
                                 </div>
                             </div>
-                            <hr/>
                         </div>
                     </form>
                     <!-- end of form -->

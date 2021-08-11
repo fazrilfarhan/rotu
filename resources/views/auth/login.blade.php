@@ -20,12 +20,20 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="militaryNumber"><i class="icofont icofont-ui-email"></i></span>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Your Email Address">
-                        <span class="md-line"></span>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon" id="militaryNumber"><i class="ti-lock"></i></span>
                         <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Password">
-                        <span class="md-line"></span>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="row m-t-25 text-left">
                         <div class="col-sm-7 col-xs-12">
@@ -37,11 +45,11 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="col-sm-5 col-xs-12 forgot-phone text-right">
+                        {{-- <div class="col-sm-5 col-xs-12 forgot-phone text-right">
                             @if (Route::has('password.request'))
                             <a  href="{{ route('password.request') }}" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
                             @endif
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row m-t-30">
                         <div class="col-md-12">

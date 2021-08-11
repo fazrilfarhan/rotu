@@ -60,7 +60,6 @@
                     @foreach($cadets as $cadet)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$cadet->id}}</td>
                         <td>{{$cadet->cadetID}}</td>
                         <td>{{$cadet->cadetRank}}</td>
                         <td>{{$cadet->cadetName}}</td>

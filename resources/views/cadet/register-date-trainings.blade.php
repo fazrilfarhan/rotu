@@ -43,9 +43,11 @@
     <div class="card-header">
         <b>Start Date: {{\Carbon\Carbon::parse($training->startDate)->format('d/m/Y')}} -
         End Date: {{\Carbon\Carbon::parse($training->endDate)->format('d/m/Y')}}</b>
-        <div class="card-header-right">                                                             
-            <i class="icofont icofont-spinner-alt-5"></i>                                                         
+        <div class="card-header-right">
+            <i class="icofont icofont-spinner-alt-5"></i>                                             
         </div>
+        <span>Select your available date to join this training with range in date above</span>                                                     
+
     </div>
     <div class="card-block tooltip-icon button-list">
       <form action=" {{ route('register-trainings.store', $training->id) }} " method="POST">

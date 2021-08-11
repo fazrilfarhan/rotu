@@ -35,7 +35,9 @@
         </div>
     </div>
     <!-- Page-header end -->
-
+    <div class="form-group">
+        <a href="{{ route('equipments.create')}}"><button class="btn btn-primary btn-block">Add Equipment</button></a>
+    </div>
 <div class="card">
     <div class="card-header">
         <h4>List of Equipments</h4>
