@@ -56,7 +56,10 @@
                 @foreach($equipments as $equipment)
                  <label class="required" for="equipments"></label>
                 <tr>
-                    <td><input type="checkbox" class="equipment-enable" name="equipmentArray[]" value="{{ $equipment->id }}"></td>
+                    <td>
+                        <input type="checkbox" class="equipment-enable" name="equipmentArray[]" value="{{ $equipment->id }}"
+                        @if($equipment->quantity <= 0) disabled @endif>
+                    </td>
                     <td>{{ $equipment->equipName }}</td>
                     <td>{{ $equipment->quantity}}</td>
                     {{-- <td><input data-id="{{ $equipment->id }}" type="text" class="form-control" placeholder="Quantity"></td> --}}
